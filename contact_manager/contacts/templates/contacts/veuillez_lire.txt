@@ -1,0 +1,3 @@
+l'implémentation du HTML a été réalisé grâce à la documentation Django et Bootstrap en addition
+de quelques recherches sur GitHub et à l'aide de ChatGPT pour la gestion des erreurs.
+L'idée de structure était de la part de Mademoiselle Aya Allaoui

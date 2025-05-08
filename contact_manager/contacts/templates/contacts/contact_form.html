@@ -1,0 +1,14 @@
+{% extends 'contacts/base.html' %}
+{% block title %}Ajouter un contact{% endblock %}
+
+{% block content %}
+<div class="col-md-8 offset-md-2">
+    <h2 class="mb-4 text-center">Ajouter un contact</h2>
+    <form method="post" class="border p-4 shadow bg-white rounded">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success mt-2">Enregistrer</button>
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary mt-2">Annuler</a>
+    </form>
+</div>
+{% endblock %}

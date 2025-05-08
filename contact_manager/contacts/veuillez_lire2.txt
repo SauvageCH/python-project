@@ -1,0 +1,3 @@
+L'implémentation du code des classes n'est pas la notre à 100%, nous avons trouvé des problèmes lors de la création 
+et de la migration. Grâce à la communauté GitHub et StackOverFlow nous avons pu réécrire notre code.
+L'idée était de la part de Monsieur Othmane Chougrad.
