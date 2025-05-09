@@ -2,11 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, ContactForm
 from .models import Contact, CustomUser
+#methode importé depuis un module django qui nécessite le login avant l'exécution des autres fonctions
 from django.contrib.auth.decorators import login_required
 
 # vue de connexion
-
-
 def login_view(request):
     form = LoginForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
@@ -21,22 +20,18 @@ def login_view(request):
     return render(request, "contacts/login.html", {"form": form})
 
 # vue principale après connexion
-@login_required
+@login_required 
 def dashboard(request):
     contacts = Contact.objects.filter(user=request.user)
     category = request.GET.get('category')
     search = request.GET.get('search')
-
     # filtrage
     if category:
         contacts = contacts.filter(category=category)
-
     # recherche
     if search:
         contacts = contacts.filter(phone_number__icontains=search)
-
     return render(request, 'contacts/dashboard.html', {'contacts': contacts})
-
 # ajout ou édition de contact
 @login_required
 def add_contact(request):

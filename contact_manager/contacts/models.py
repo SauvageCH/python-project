@@ -43,7 +43,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     def __str__(self):
-        """Représentation textuelle de l'utilisateur (pour l'admin et le shell)"""
+        """Représentation de l'utilisateur"""
         return self.phone_number
 
 
